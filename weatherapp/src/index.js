@@ -12,3 +12,10 @@ root.render(
 );
 
 
+/*
+
+Core Features:
+1) Upon load, the app will already have the weather data for the user's current location displayed
+2) Users will be able to search weather data for a different location as well
+
+*/
