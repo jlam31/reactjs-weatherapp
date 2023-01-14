@@ -1,7 +1,7 @@
 const NavBar = () => {
     return (  
         <nav className="navbar">
-            <h2>Weather App</h2>
+            <h1>Weather App</h1>
             <div className="navbar-content">
                 GitHub
             </div>

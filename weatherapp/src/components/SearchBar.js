@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 
 const SearchBar = () => {
     return ( 
-        <Container maxWidth="false">
+        <Container sx={{p: 4}}>
             <TextField fullWidth label="Enter city/zipcode" variant='outlined' />
         </Container>
      );
