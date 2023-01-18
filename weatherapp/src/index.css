@@ -21,7 +21,20 @@
 
 .content {
   max-width: 50%;
-  margin: 40px auto;
+  margin: 10px auto;
   padding: 20px;
   /*border-style: solid;*/
+}
+
+.forecast-bar {
+  padding: 5px;
+  display: flex;
+  align-items: center;
+
+  margin: 0 auto;
+  border-bottom: 1px solid #f2f2f2;
+}
+
+.forecast-bar-content{
+  margin-left: auto;
 }
