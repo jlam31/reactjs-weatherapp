@@ -14,7 +14,7 @@ const CurrentWeather = () => {
     const [currTemp, setCurrTemp] = useState('');
 
     useEffect( () => {
-        fetch('http://api.weatherapi.com/v1/current.json?key=4a24417b627b4e3d9ca232624231301&q=auto:ip')
+        fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=auto:ip`)
             .then(res => {
                 if(!res.ok){
                     throw Error('Could not fetch data');
