@@ -5,6 +5,9 @@ import WeeklyForecast from './WeeklyForecast';
 
 
 const WeatherInfo = () => {
+
+    
+
     return (  
         <div style={{ width: '100%' }}>
             <CurrentWeather />

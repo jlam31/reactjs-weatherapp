@@ -1,11 +1,13 @@
 import { Container } from "@mui/system";
 
-const ForecastBar = () => {
+const ForecastBar = ({date, maxTemp, minTemp, condition}) => {
     return (  
         <div className="forecast-bar">
-            <h3>Day</h3>
+            <h3>{date}</h3>
             <div className="forecast-bar-content">
-                20&#176;F
+                <p>{`High: ${maxTemp}`} &#176;F</p>
+                <p>{`Low: ${minTemp} `} &#176;F</p>
+                <p>{condition}</p>
             </div>
         </div>
     );
