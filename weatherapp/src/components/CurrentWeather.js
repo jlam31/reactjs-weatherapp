@@ -5,10 +5,12 @@ import testLogo from '../weather/64x64/day/113.png'
 
 import { Container, flexbox } from '@mui/system';
 import { useEffect, useState } from 'react';
+import useFetchCurrent from '../hooks/useFetchCurrent';
 
 
 const CurrentWeather = () => {
 
+/*
     const [location, setLocation] = useState('');
     const [currCondition, setCurrCondition] = useState('');
     const [currTemp, setCurrTemp] = useState('');
@@ -30,6 +32,9 @@ const CurrentWeather = () => {
                 console.log(err.message);
             })
     })
+    */
+
+    const { location, currCondition, currTemp} = useFetchCurrent(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=auto:ip`);
 
     return ( 
         <Box sx={{width:1}}>
