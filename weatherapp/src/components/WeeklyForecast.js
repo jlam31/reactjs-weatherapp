@@ -1,38 +1,13 @@
 import { useEffect, useState } from "react";
+import useFetchWeekly from "../hooks/useFetchWeekly";
 import ForecastBar from "./ForecastBar";
 
 const WeeklyForecast = () => {
 
-    /*
-    const [date, setDate] = useState([]);
-    const [minTemp, setMinTemp] = useState([]);
-    const [maxTemp, setMaxTemp] = useState([]);
-    const [condition, setCondition] = useState([]);
-    */
 
-    const [forecasts, setForecasts] = useState([]);
-    const [loading, setLoading] = useState(true);
-
-    useEffect( () => {
-        fetch(`http://api.weatherapi.com/v1/forecast.json?key=4a24417b627b4e3d9ca232624231301&q=auto:ip&days=3`)
-            .then(res => {
-                if(!res.ok){
-                    throw Error('Could not fetch data');
-                }
-                return res.json();
-            })
-            .then(data => {
-                setForecasts(data.forecast.forecastday);
-                setLoading(false);
-               
-            })
-            .catch(err => {
-                console.log(err.message);
-            })
-    }, []);
+     const { data: forecasts, loading, error} = useFetchWeekly(`http://api.weatherapi.com/v1/forecast.json?key=${process.env.REACT_APP_API_KEY}&q=auto:ip&days=3`);
 
     
-
     return ( 
         <div>
             { !loading && <ForecastBar date={forecasts[0].date} maxTemp={forecasts[0].day.maxtemp_f} minTemp={forecasts[0].day.mintemp_f} condition={forecasts[0].day.condition.text} /> }
