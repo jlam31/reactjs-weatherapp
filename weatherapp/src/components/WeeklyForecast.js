@@ -8,9 +8,9 @@ const WeeklyForecast = () => {
 
     return ( 
         <div>
-            { !loading && <ForecastBar date={forecasts[0].date} maxTemp={forecasts[0].day.maxtemp_f} minTemp={forecasts[0].day.mintemp_f} condition={forecasts[0].day.condition.text} icon={forecasts[0].day.condition.icon} /> }
-            { !loading && <ForecastBar date={forecasts[1].date} maxTemp={forecasts[1].day.maxtemp_f} minTemp={forecasts[1].day.mintemp_f} condition={forecasts[1].day.condition.text} icon={forecasts[1].day.condition.icon}/> }
-            { !loading && <ForecastBar date={forecasts[2].date} maxTemp={forecasts[2].day.maxtemp_f} minTemp={forecasts[2].day.mintemp_f} condition={forecasts[2].day.condition.text} icon={forecasts[2].day.condition.icon}/> }
+            { !loading && <ForecastBar date={forecasts[0].date} maxTemp={Math.round(forecasts[0].day.maxtemp_f)} minTemp={Math.round(forecasts[0].day.mintemp_f)} condition={forecasts[0].day.condition.text} icon={forecasts[0].day.condition.icon} /> }
+            { !loading && <ForecastBar date={forecasts[1].date} maxTemp={Math.round(forecasts[1].day.maxtemp_f)} minTemp={Math.round(forecasts[1].day.mintemp_f)} condition={forecasts[1].day.condition.text} icon={forecasts[1].day.condition.icon}/> }
+            { !loading && <ForecastBar date={forecasts[2].date} maxTemp={Math.round(forecasts[2].day.maxtemp_f)} minTemp={Math.round(forecasts[2].day.mintemp_f)} condition={forecasts[2].day.condition.text} icon={forecasts[2].day.condition.icon}/> }
         </div>
      );
 }

@@ -12,17 +12,17 @@ const CurrentWeather = () => {
     const { location, currCondition, currTemp, icon} = useFetchCurrent(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=auto:ip`);
 
     return ( 
-        <Box sx={{width:1}}>
-            <Container sx={{ border:1}}>
+        <Box sx={{width:1, borderRadius: '16px', boxShadow: 2, background: 'radial-gradient( circle farthest-corner at 12.3% 19.3%,  rgba(85,88,218,1) 0%, rgba(95,209,249,1) 100.2% );'}}>
+            <Container>
                 <h2>{location}</h2>
                 <p>{currCondition}</p>
 
                 <Box sx={{ textAlign: 'left', mt:4, display:'grid' }}>
                     <Box sx={{ gridRow:'1'}}>
                         <h2 >{currTemp}&#176;F</h2>
-                        <img src={icon} />
+                        <img src={icon} style={{ paddingTop: 10}} />
                     </Box>
-                    <Box sx={{ gridRow:'1', height:100, /* bgcolor:'success.main'*/ }}>
+                    <Box sx={{ gridRow:'1', height:100 }}>
                     
                     </Box>
                 </Box>
@@ -35,3 +35,4 @@ const CurrentWeather = () => {
 }
  
 export default CurrentWeather;
+

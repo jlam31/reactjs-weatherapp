@@ -7,10 +7,15 @@ function App() {
     <div className="App">
       <NavBar />
       <div className="content">
-        <SearchBar />
+        {/* <SearchBar /> */}
         <WeatherInfo />
       </div>
-      
+      <div className="navbar">
+       
+              <div className="navbar-content">
+                Powered by <a href="https://www.weatherapi.com/" title="Free Weather API">WeatherAPI.com</a>
+              </div>
+      </div>
     </div>
   );
 }
