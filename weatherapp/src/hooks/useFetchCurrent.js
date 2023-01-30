@@ -6,6 +6,7 @@ const useFetchCurrent = (url) => {
     const [location, setLocation] = useState('');
     const [currCondition, setCurrCondition] = useState('');
     const [currTemp, setCurrTemp] = useState('');
+    const [icon, setIcon] = useState('');
 
     useEffect( () => {
         fetch(url)
@@ -19,13 +20,14 @@ const useFetchCurrent = (url) => {
                 setLocation(data.location.name);
                 setCurrCondition(data.current.condition.text);
                 setCurrTemp(data.current.temp_f);
+                setIcon(data.current.condition.icon);
             })
             .catch(err => {
                 console.log(err.message);
             })
     })
 
-    return { location, currCondition, currTemp};
+    return { location, currCondition, currTemp, icon};
 }
  
 export default useFetchCurrent;

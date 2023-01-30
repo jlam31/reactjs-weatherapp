@@ -1,6 +1,5 @@
 import Box from '@mui/material/Box';
 import Grid from '@mui/material/Grid';
-import testLogo from '../weather/64x64/day/113.png'
 
 
 import { Container, flexbox } from '@mui/system';
@@ -10,7 +9,7 @@ import useFetchCurrent from '../hooks/useFetchCurrent';
 
 const CurrentWeather = () => {
 
-    const { location, currCondition, currTemp} = useFetchCurrent(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=auto:ip`);
+    const { location, currCondition, currTemp, icon} = useFetchCurrent(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=auto:ip`);
 
     return ( 
         <Box sx={{width:1}}>
@@ -20,11 +19,11 @@ const CurrentWeather = () => {
 
                 <Box sx={{ textAlign: 'left', mt:4, display:'grid' }}>
                     <Box sx={{ gridRow:'1'}}>
-                        <h2 style={{display:"flex", justifyContent:"center"}}>{currTemp}&#176;F</h2>
-                       
+                        <h2 >{currTemp}&#176;F</h2>
+                        <img src={icon} />
                     </Box>
-                    <Box sx={{ gridRow:'1', height:300, bgcolor:'success.main'}}>
-                    <img src={testLogo} />
+                    <Box sx={{ gridRow:'1', height:100, /* bgcolor:'success.main'*/ }}>
+                    
                     </Box>
                 </Box>
 
