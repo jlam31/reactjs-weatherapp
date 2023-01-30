@@ -10,30 +10,6 @@ import useFetchCurrent from '../hooks/useFetchCurrent';
 
 const CurrentWeather = () => {
 
-/*
-    const [location, setLocation] = useState('');
-    const [currCondition, setCurrCondition] = useState('');
-    const [currTemp, setCurrTemp] = useState('');
-
-    useEffect( () => {
-        fetch(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=auto:ip`)
-            .then(res => {
-                if(!res.ok){
-                    throw Error('Could not fetch data');
-                }
-                return res.json();
-            })
-            .then(data => {
-                setLocation(data.location.name);
-                setCurrCondition(data.current.condition.text);
-                setCurrTemp(data.current.temp_f);
-            })
-            .catch(err => {
-                console.log(err.message);
-            })
-    })
-    */
-
     const { location, currCondition, currTemp} = useFetchCurrent(`http://api.weatherapi.com/v1/current.json?key=${process.env.REACT_APP_API_KEY}&q=auto:ip`);
 
     return ( 

@@ -20,10 +20,10 @@
 }
 
 .content {
-  max-width: 50%;
+  max-width: 30%;
   margin: 10px auto;
   padding: 20px;
-  /*border-style: solid;*/
+  border-style: solid;
 }
 
 .forecast-bar {
@@ -36,5 +36,6 @@
 }
 
 .forecast-bar-content{
-  margin-left: auto;
+  /* margin-left: auto; */
+  margin-left: 60%;
 }
